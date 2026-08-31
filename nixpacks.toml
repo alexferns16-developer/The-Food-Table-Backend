@@ -1,0 +1,8 @@
+[phases.build]
+cmds = ["pip install -r requirements.txt"]
+
+[phases.deploy]
+cmd = "gunicorn backend.wsgi --log-file -"
+
+[start]
+cmd = "gunicorn backend.wsgi --log-file -"
