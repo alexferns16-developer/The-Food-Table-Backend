@@ -1,2 +1,2 @@
 [start]
-cmd = "python -m gunicorn backend.wsgi --log-file -"
+cmd = "python manage.py collectstatic --noinput && python -m gunicorn backend.wsgi --log-file -"
