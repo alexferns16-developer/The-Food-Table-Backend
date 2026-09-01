@@ -35,6 +35,11 @@ MIDDLEWARE = [
 # In production set CORS_ALLOWED_ORIGINS env var to your Vercel URL (comma-separated).
 # Locally, DEBUG=True so all origins are allowed.
 CORS_ALLOW_ALL_ORIGINS = DEBUG
+CSRF_TRUSTED_ORIGINS = [
+    o.strip()
+    for o in os.environ.get('CSRF_TRUSTED_ORIGINS', 'http://localhost:8000').split(',')
+    if o.strip()
+]
 CORS_ALLOWED_ORIGINS = [
     o.strip()
     for o in os.environ.get('CORS_ALLOWED_ORIGINS', 'http://localhost:3000').split(',')
